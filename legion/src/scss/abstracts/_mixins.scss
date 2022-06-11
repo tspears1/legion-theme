@@ -1,0 +1,54 @@
+@mixin font-face($family-name, $file-name, $font-weight: normal, $font-style: normal) {
+   @font-face {
+      $font-path: '@/fonts/#{$file-name}';
+      font-display: auto;
+      font-family: '#{$family-name}';
+      font-style: $font-style;
+      font-weight: $font-weight;
+      src: url($font-path + '.woff2') format('woff2'), url($font-path + '.woff') format('woff');
+   }
+}
+
+@mixin breakpoint($bp, $rule: min-width) {
+   @media screen and (#{$rule}: map-get($breakpoints, $bp)) {
+      @content;
+   }
+}
+
+@mixin visuallyhidden {
+   border: 0;
+   clip: rect(0 0 0 0);
+   height: 1px;
+   margin: -1px;
+   overflow: hidden;
+   padding: 0;
+   position: absolute;
+   width: 1px;
+}
+
+@mixin svg-contain( $width, $height: auto ) {
+   height: #{ $height };
+   object-fit: contain;
+   width: #{ $width };
+
+   svg {
+      height: 100%;
+      width: 100%;
+   }
+}
+
+@mixin pseudo-link( $z: 0 ) {
+   &::after {
+      bottom: 0;
+      content: '';
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: #{ $z };
+   }
+}
+
+@mixin grid-height( $percent ) {
+   height: calc( ( 100vh - (var(--padding-y-n) + var(--padding-y-s) + var(--logo-y) ) ) / ( 100% / $percent ) );
+}

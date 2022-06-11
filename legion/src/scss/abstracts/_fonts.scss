@@ -1,0 +1,11 @@
+@include font-face(
+   $family-name: izoard_softregular,
+   $file-name: izoardsoft-regular-webfont,
+   $font-weight: normal
+);
+
+@include font-face(
+   $family-name: izoardregular,
+   $file-name: izoard-regular-webfont,
+   $font-weight: normal
+);

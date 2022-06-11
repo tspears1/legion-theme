@@ -1,0 +1,85 @@
+header {
+   grid-area: HEADER;
+   place-self: center;
+
+   @include breakpoint( md ) {
+      place-self: start;
+   }
+}
+
+.logo {
+   height: var(--logo-y);
+}
+
+article {
+   align-items: center;
+   display: grid;
+   grid-area: CONTENT;
+   justify-items: center;
+   place-self: center;
+
+   @include breakpoint( md ) {
+
+   }
+
+   p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      text-align: center;
+      text-transform: uppercase;
+
+      @include breakpoint( md ) {
+         font-size: 1.625rem;
+         line-height: 2.4;
+      }
+   }
+}
+
+.message {
+   display: grid;
+   align-items: center;
+   justify-items: center;
+}
+
+footer {
+   align-self: end;
+   grid-area: FOOTER;
+}
+
+.type {
+   height: 40vh;
+
+   img {
+      height: 100%;
+      object-fit: contain;
+      width: 100%;
+   }
+}
+
+.buttonGroup {
+   display: grid;
+   grid-auto-flow: column;
+   gap: 2rem;
+   grid-auto-columns: max-content;
+   margin: 2rem 0 0;
+}
+
+a.button {
+   &.-icon {
+      border: 1px solid transparent;
+      border-radius: 5px;
+      padding: 6px;
+      transition: border 300ms ease-in-out;
+
+      &:hover,
+      &:focus {
+         border-color: var(--c-body-text);
+         outline: none;
+      }
+
+      img {
+         height: 42px;
+         width: 42px;
+      }
+   }
+}
